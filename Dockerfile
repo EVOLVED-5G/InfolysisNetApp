@@ -13,6 +13,7 @@ COPY entrypoint2.py /var/www/
 COPY entrypoint3.py /var/www/
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY netappcontroller /var/www/
+COPY netapp_docker_test_deployment.py /var/www/
 
 EXPOSE 80 8000
 
