@@ -14,9 +14,19 @@ COPY entrypoint3.py /var/www/
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY netappcontroller /var/www/
 COPY netapp_docker_test_deployment.py /var/www/
+#COPY rc.local /etc/
+#RUN chmod 755 /etc/rc.local
 
 EXPOSE 80 8000
 
 RUN python /var/www/entrypoint.py
-CMD python /var/www/entrypoint2.py && /bin/bash
+#RUN python /var/www/entrypoint2.py
+#RUN python /var/www/entrypoint3.py
 
+CMD python /var/www/entrypoint3.py && tail -f /dev/null
+
+#RUN sh /etc/rc.local
+
+#CMD python /var/www/entrypoint2.py && /bin/bash
+#CMD python /var/www/entrypoint2.py
+#CMD ["python", "/var/www/entrypoint2.py"]
