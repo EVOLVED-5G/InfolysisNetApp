@@ -9,7 +9,7 @@ with open('./sql_app/config.txt') as c:
 	lines = c.read().splitlines() 
 
 #DATABASE_URL = 'mysql+pymysql://root:theoni@127.0.0.1:3305/test'
-DATABASE_URL = 'mysql+pymysql://'+lines[0]+':%s@185.184.71.39:3306/nettapp_evolved5g' % quote(lines[1])
+DATABASE_URL = 'mysql+pymysql://'+lines[0]+':%s@127.0.0.1:3306/nettapp_evolved5g' % quote(lines[1])
 #DATABASE_URL = 'mysql+pymysql://'+lines[0]+':%s@127.0.0.1:3305/test' % quote(lines[1])
 #DATABASE_URL = 'mysql+pymysql://user:password@host/db_name'
 
