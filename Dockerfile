@@ -14,7 +14,7 @@ COPY entrypoint3.py /var/www/
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY netappcontroller /var/www/
 COPY netapp_docker_test_deployment.py /var/www/
-ENV NEF_HOSTNAME="http://185.184.71.39:8888"
+#ENV NEF_HOSTNAME="http://185.184.71.39:8888"
 #COPY rc.local /etc/
 #RUN chmod 755 /etc/rc.local
 
