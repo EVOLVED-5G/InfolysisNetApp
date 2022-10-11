@@ -1,7 +1,7 @@
 from evolved5g import swagger_client
 from evolved5g.swagger_client import LoginApi, User
 from evolved5g.swagger_client.models import Token
-
+import os
 
 def get_token() -> Token:
 
@@ -30,4 +30,4 @@ def get_api_client(token) -> swagger_client.ApiClient:
 
 
 def get_host_of_the_nef_emulator() -> str:
-    return "http://185.184.71.39:8888"
+    return os.getenv('NEF_HOSTNAME')
