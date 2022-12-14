@@ -3,7 +3,7 @@ FROM pensiero/apache-php-mysql
 
 RUN apt-get update && apt-get install -y software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
-RUN apt-get update && apt-get install -y net-tools iputils-ping vim unzip tcpdump bmon mysql-server python3.9 python3.9-distutils python3-setuptools
+RUN apt-get update && apt-get install -y net-tools iputils-ping vim unzip tcpdump bmon mysql-server python3.9 python3.9-distutils python3-setuptools jq
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN python3.9 get-pip.py
 
@@ -14,7 +14,12 @@ COPY entrypoint3.py /var/www/
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY netappcontroller /var/www/
 COPY netapp_docker_test_deployment.py /var/www/
+COPY dummy /var/www/
 ENV NEF_HOSTNAME="http://185.184.71.39:8888"
+ENV CAPIF_HOSTNAME=capifcore
+ENV CAPIF_PORT_HTTP=8080
+ENV CAPIF_PORT_HTTPS=443
+
 #COPY rc.local /etc/
 #RUN chmod 755 /etc/rc.local
 
