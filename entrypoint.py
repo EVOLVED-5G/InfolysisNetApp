@@ -10,7 +10,7 @@ os.system("mysql < /var/www/html/configui/nettapp_evolved5g.sql");
 os.system("mysql -e \"ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root'\"");
 os.system("pip3.9 install uvicorn")
 os.system("pip3.9 install fastapi==0.70.0")
-os.system("pip3.9 install sqlalchemy")
+os.system("pip3.9 install sqlalchemy==1.4")
 os.system("pip3.9 install pymysql")
 os.system("pip3.9 install --upgrade requests==2.20.1")
 os.system("pip3.9 install fastapi")
