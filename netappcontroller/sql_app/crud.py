@@ -77,7 +77,7 @@ def get_location(data: schemas.LocationIn):
     netapp_id = "myNetapp"
     host = emulator_utils.get_host_of_the_nef_emulator()
     token = emulator_utils.get_token()
-    location_subscriber = LocationSubscriber(host, token.access_token)
+    location_subscriber = LocationSubscriber(host, token.access_token,emulator_utils.get_folder_path_for_certificated_and_capif_api_key(),emulator_utils.get_capif_host(),emulator_utils.get_capif_https_port())
 
     external_id = data.externalId
     #print ("WORKER ID IS:" + external_id)
