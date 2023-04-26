@@ -1,4 +1,33 @@
 
+v3.10.5 (2021-11-02)
+--------------------
+fix overly strict engines entry in package.json requiring Node 11 (#6612)
+
+
+v3.10.4 (2021-10-26)
+--------------------
+fix continued dist problems with Bower (#6601)
+
+
+v3.10.3 (2021-10-13)
+--------------------
+fix: npm-shrinkwrap.json published causing bundling problem when using webpack (#6536)
+fix: error in npm install of v3 from jquery-simulate dependency with older npm (#6460)
+
+
+v3.10.2 (2020-05-13)
+--------------------
+
+Compatibilty with jQuery 3.5.0 (#5391, #5348)
+
+
+v3.10.1 (2019-08-10)
+--------------------
+
+Released solely to change the [package description text](https://www.npmjs.com/package/fullcalendar)
+to reference v4 packages.
+
+
 v3.10.0 (2019-01-10)
 --------------------
 
