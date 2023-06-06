@@ -6,7 +6,8 @@ import time
 os.system("echo \"83.212.73.142     capifcore\" >> /etc/hosts")
 time.sleep(1)
 os.system("service apache2 start")
-os.system("service mysql start")
+os.system("echo \"skip-name-resolve\" >> /etc/mysql/mariadb.conf.d/50-server.cnf")
+os.system("service mysql restart")
 
 time.sleep(3)
 
