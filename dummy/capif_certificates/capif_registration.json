@@ -1,0 +1,17 @@
+{
+  "folder_to_store_certificates": "/var/www/capif_certificates",
+  "capif_host": "capifcore",
+  "capif_http_port": "8080",
+  "capif_https_port": "443",
+  "capif_netapp_username": "infolysis",
+  "capif_netapp_password": "infolysis",
+  "capif_callback_url": "http://185.184.71.39:5017",
+  "description": ",infolysis_netapp_description",
+  "csr_common_name": "infolysisnetapp",
+  "csr_organizational_unit": "infolysis_it",
+  "csr_organization": "infolysis",
+  "crs_locality": "Athens",
+  "csr_state_or_province_name": "Athens",
+  "csr_country_name": "GR",
+  "csr_email_address": "chsakkas@infolysis.gr"
+}
