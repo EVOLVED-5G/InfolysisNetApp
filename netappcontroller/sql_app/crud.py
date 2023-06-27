@@ -35,49 +35,13 @@ def update_worker(db: Session, worker: schemas.WorkerUpdate):
 	return db_worker
 
 
-'''def get_auth_token(username: str, password: str):
-	url = "http://185.184.71.39:8888/api/v1/login/access-token"
-	data = {"username": username, "password": password}
-	response = requests.post(url, data=data)
-	return response.json()
-
-
-# this makes a post request to 5G API
-def get_cell_by_id(data: schemas.MonitoringEventIn):
-
-	url = "http://185.184.71.39:8888/api/v1/3gpp-monitoring-event/v1/myNetapp/subscriptions"
-	
-	data = {"externalId": data.externalId, 
-	"notificationDestination": data.notificationDestination,
-	"monitoringType": data.monitoringType,
-	"maximumNumberOfReports": data.maximumNumberOfReports,
-	"monitorExpireTime": data.monitorExpireTime}
-
-	with open('token_credentials.txt', 'r') as f:
-		lines = f.read().splitlines()
-
-	username = lines[0]
-	password = lines[1]
-
-	token_string = get_auth_token(username, password)
-	
-	token = lines[0]
-	headers = CaseInsensitiveDict()
-	headers["Authorization"] = token_string["token_type"] + ' ' + token_string["access_token"]
-
-	response = requests.post(url, data=json.dumps(data), headers=headers)
-	response = response.json()
-
-	return response'''
-
 
 # the following function is to replace get_cell_by_id
 def get_location(data: schemas.LocationIn):
 
     netapp_id = "myNetapp"
     host = emulator_utils.get_host_of_the_nef_emulator()
-    token = emulator_utils.get_token()
-    location_subscriber = LocationSubscriber(host, token.access_token,emulator_utils.get_folder_path_for_certificated_and_capif_api_key(),emulator_utils.get_capif_host(),emulator_utils.get_capif_https_port())
+    location_subscriber = LocationSubscriber(host, emulator_utils.get_folder_path_for_certificated_and_capif_api_key(),emulator_utils.get_capif_host(),emulator_utils.get_capif_https_port())
 
     external_id = data.externalId
     #print ("WORKER ID IS:" + external_id)
